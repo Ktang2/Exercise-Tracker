@@ -36,9 +36,6 @@ const OneExercise = (props) => {
             <p>Repetitions: {oneExercise.repetitions}</p>
             <p>Weight: {oneExercise.weight}</p>
             <p>Date Performed: {oneExercise.datePerformed}</p>
-            {
-                
-            }
             <div className='d-flex justify-content-between '>
                 <u><Link to={`/editExercise/${oneExercise._id}`}>Edit Exercise Details</Link></u>
                 <u><Link onClick={(e) => {deleteHandler(oneExercise._id)}}>Delete</Link></u>

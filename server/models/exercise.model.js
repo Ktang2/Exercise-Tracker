@@ -29,10 +29,6 @@ const ExerciseSchema = new mongoose.Schema({
     datePerformed: {
         type: String,
         required: [true, "Date is Required"]
-    },
-
-    videoUrl: {
-        type: String,
     }
 
 }, {timestamps: true})

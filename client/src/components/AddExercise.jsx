@@ -80,11 +80,6 @@ const AddExercise = (props) => {
                     }
                     <input className="form-control mb-3" type="date" name="datePerformed" value={exercise.datePerformed} onChange={changeHandler}/>
                 </div>
-                <div>
-                    <label>Video URL (optional): </label>
-                    <input className="form-control mb-3" type="text" name="videoUrl" onChange={changeHandler}/>
-                </div>
-
                 <button className="mt-3 mb-3s btn btn-primary">Add Exercise</button>
             </form>
         </div>
