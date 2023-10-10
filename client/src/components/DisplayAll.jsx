@@ -27,7 +27,7 @@ const DisplayAllExercises = (props) => {
                         <th>Exercise</th>
                         <th>Sets</th>
                         <th>Repetitions</th>
-                        <th>Weight (lbs.)</th>
+                        <th>Weight</th>
                         <th>Last Performed On</th>
                         <th>Actions</th>
                     </tr>
@@ -39,7 +39,7 @@ const DisplayAllExercises = (props) => {
                                 <td><Link to={'/oneExercise/' + exercise._id}>{exercise.name}</Link></td>
                                 <td>{exercise.sets}</td>
                                 <td>{exercise.repetitions}</td>
-                                <td>{exercise.weight} lbs</td>
+                                <td>{exercise.weight} lbs / {(exercise.weight*2.2).toFixed(2)} kgs</td>
                                 <td>{exercise.datePerformed}</td>
                                 <td><Link to={'/editExercise/' + exercise._id}>Edit</Link></td>
                             </tr>
