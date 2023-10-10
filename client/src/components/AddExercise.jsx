@@ -63,7 +63,7 @@ const AddExercise = (props) => {
                     <input className="form-control mb-3" type="number" name="repetitions" value={exercise.repetitions} onChange={changeHandler}/>
                 </div>
                 <div>
-                    <label>Weight: </label>
+                    <label>Weight (lbs): </label>
                     {
                         errors.weight ?
                         <p className='text-danger'>{errors.weight.message} </p> :

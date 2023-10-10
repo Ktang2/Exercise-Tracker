@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 const DisplayAllExercises = (props) => {
 
     const[exercises, setExercises]= useState([]);
+    const[displayKg, setDisplayKg] = useState(false);
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/allExercises')
@@ -27,7 +28,13 @@ const DisplayAllExercises = (props) => {
                         <th>Exercise</th>
                         <th>Sets</th>
                         <th>Repetitions</th>
-                        <th>Weight</th>
+                        <th className="d-flex justify-content-center">
+                            <div className="mx-3">Weight</div>
+                            <div className="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" onClick={(e) => setDisplayKg(!displayKg)} id="flexSwitchCheckDefault"/>
+                                <label class="form-check-label" for="flexSwitchCheckDefault">kg</label>
+                            </div>
+                        </th>
                         <th>Last Performed On</th>
                         <th>Actions</th>
                     </tr>
@@ -39,7 +46,7 @@ const DisplayAllExercises = (props) => {
                                 <td><Link to={'/oneExercise/' + exercise._id}>{exercise.name}</Link></td>
                                 <td>{exercise.sets}</td>
                                 <td>{exercise.repetitions}</td>
-                                <td>{exercise.weight} lbs / {(exercise.weight*2.2).toFixed(2)} kgs</td>
+                                <td>{displayKg ? <p>{(exercise.weight/2.2).toFixed(2)} kg</p> : <p>{exercise.weight} lbs</p>  }</td>
                                 <td>{exercise.datePerformed}</td>
                                 <td><Link to={'/editExercise/' + exercise._id}>Edit</Link></td>
                             </tr>
